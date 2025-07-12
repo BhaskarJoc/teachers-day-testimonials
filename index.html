@@ -42,8 +42,8 @@
     }
     .slides {
       display: flex;
-      width: 500%;
-      animation: slide 20s infinite;
+      width: 300%;
+      animation: slide 15s infinite;
     }
     .slides img {
       width: 100%;
@@ -52,13 +52,12 @@
     }
     @keyframes slide {
       0% { transform: translateX(0%); }
-      20% { transform: translateX(0%); }
-      25% { transform: translateX(-100%); }
-      45% { transform: translateX(-100%); }
-      50% { transform: translateX(-200%); }
-      70% { transform: translateX(-200%); }
-      75% { transform: translateX(-300%); }
-      95% { transform: translateX(-300%); }
+      25% { transform: translateX(0%); }
+      30% { transform: translateX(-100%); }
+      55% { transform: translateX(-100%); }
+      60% { transform: translateX(-200%); }
+      85% { transform: translateX(-200%); }
+      90% { transform: translateX(0%); }
       100% { transform: translateX(0%); }
     }
     .testimonials-section {
@@ -124,16 +123,16 @@
     "A good teacher is like a candle — it consumes itself to light the way for others."
   </div>
 
+  <!-- Photo Slideshow -->
   <div class="slideshow">
     <div class="slides">
-   <div class="slides">
-  <img src="https://drive.google.com/uc?export=view&id=1NsK_fA6HCE9V_lRQOvSo-MMtK7tDIhDb" alt="Photo 1">
-  <img src="https://drive.google.com/uc?export=view&id=1UKd6ZP2oCXuslRy0H16wdift642PM9ON" alt="Photo 2">
-  <img src="https://drive.google.com/uc?export=view&id=1Shrs1x7jRtVsdfXosrAP0zVfu2D3lisH" alt="Photo 3">
-</div>
-
+      <img src="https://drive.google.com/uc?export=view&id=1NsK_fA6HCE9V_lRQOvSo-MMtK7tDIhDb" alt="Photo 1">
+      <img src="https://drive.google.com/uc?export=view&id=1UKd6ZP2oCXuslRy0H16wdift642PM9ON" alt="Photo 2">
+      <img src="https://drive.google.com/uc?export=view&id=1Shrs1x7jRtVsdfXosrAP0zVfu2D3lisH" alt="Photo 3">
+    </div>
   </div>
 
+  <!-- Testimonials -->
   <section class="testimonials-section">
     <h2 style="color:#f0c808; margin-bottom: 30px;">Messages from Our Alumni</h2>
 
@@ -153,15 +152,18 @@
     </div>
   </section>
 
+  <!-- Submit Button -->
   <div class="submit-button-container">
     <button class="submit-button" onclick="document.getElementById('formSection').scrollIntoView({behavior: 'smooth'});">Submit Your Message</button>
   </div>
 
+  <!-- Google Form -->
   <div class="form-section" id="formSection">
     <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
   </div>
 
+  <!-- Testimonial Script -->
   <script>
     let current = 0;
     const slides = document.querySelectorAll('.testimonial-slide');
@@ -175,4 +177,5 @@
 
 </body>
 </html>
+
 
