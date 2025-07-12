@@ -198,33 +198,64 @@ border: none;
 <!-- Form Section -->
 <div class="form-section" id="formSection">
 <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message or Poem</h2>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
-</div>
+
 
   <form 
 	action="https://formspree.io/f/myzjrapa"
   	method="POST"
->
-  <label>
-    Name:
-    <input type="text" name="name" required />
-  </label>
-  <br /><br />
+></form>
+<div class="submit-button-container">
+  <button class="submit-button" onclick="toggleForm()">Submit Your Message or Poem</button>
+</div>
 
-  <label>
-    Batch:
-    <input type="text" name="batch" required />
-  </label>
-  <br /><br />
+<!-- Hidden Form Section -->
+<div class="form-section" id="formSection">
+  <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message or Poem</h2>
+  <form action="https://formspree.io/f/myzjrapa"
+  	method="POST" style="max-width: 500px; margin: auto;">
+    <label>
+      Name:<br />
+      <input type="text" name="name" required style="width: 100%; padding: 8px;" />
+    </label>
+    <br /><br />
 
-  <label>
-    Message:
-    <textarea name="message" rows="5" required></textarea>
-  </label>
-  <br /><br />
+    <label>
+      Batch:<br />
+      <select name="batch" required style="width: 100%; padding: 8px;">
+        <option value="">Select Batch</option>
+        <!-- Years from 1998 to 2025 -->
+        <script>
+          for (let year = 1998; year <= 2025; year++) {
+            document.write(`<option value="${year}">${year}</option>`);
+          }
+        </script>
+      </select>
+    </label>
+    <br /><br />
 
-  <button type="submit">Send</button>
-</form>
+    <label>
+      Course:<br />
+      <select name="course" required style="width: 100%; padding: 8px;">
+        <option value="">Select Course</option>
+        <option>BBA</option>
+        <option>B.Com</option>
+        <option>MCA</option>
+        <option>BCA</option>
+        <option>B.Tech CSE</option>
+      </select>
+    </label>
+    <br /><br />
+
+    <label>
+      Message or Poem:<br />
+      <textarea name="message" rows="5" required style="width: 100%; padding: 8px;"></textarea>
+    </label>
+    <br /><br />
+
+    <button type="submit" style="padding: 10px 20px; background: #f0c808; border: none; color: #0d1b2a; font-weight: bold; cursor: pointer;">Send</button>
+  </form>
+</div>
+
 
 <!-- JavaScript -->
 <script>
