@@ -1,109 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #0d1b2a;
       color: #ffffff;
     }
+
     header {
       background-color: #1b263b;
       color: #f0c808;
       text-align: center;
-      padding: 80px 20px 50px;
+      padding: 60px 20px 40px;
     }
+
     header h1 {
-      font-size: 3em;
+      font-size: 2.8em;
       margin-bottom: 10px;
     }
+
     header p {
       font-size: 1.2em;
     }
 
-    .quote-slideshow {
-      background-color: #f0c808;
-      color: #0d1b2a;
-      text-align: center;
-      font-style: italic;
-      font-weight: bold;
-      padding: 25px 20px;
-      min-height: 90px;
-      position: relative;
-    }
-    .quote-slide {
-      display: none;
-      font-size: 1.1em;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-    }
-    .quote-slide.active {
-      display: block;
-      opacity: 1;
-    }
-
-    .slideshow {
-      position: relative;
-      max-width: 90%;
-      margin: 30px auto;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    }
-    .slides {
-      display: flex;
-      width: 300%;
-      animation: slide 15s infinite;
-    }
-    .slides img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-    }
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      25% { transform: translateX(0%); }
-      30% { transform: translateX(-100%); }
-      55% { transform: translateX(-100%); }
-      60% { transform: translateX(-200%); }
-      85% { transform: translateX(-200%); }
-      90% { transform: translateX(0%); }
-      100% { transform: translateX(0%); }
-    }
-
     .testimonials-section {
-      padding: 50px 20px 30px;
+      padding: 50px 20px 40px;
       background-color: #1b263b;
       text-align: center;
     }
-    .testimonial-slide {
-      display: none;
-      font-size: 1.2em;
-      margin: 20px auto;
-      max-width: 800px;
-      background: #415a77;
-      padding: 30px;
-      border-radius: 10px;
-      border-left: 5px solid #f0c808;
-    }
-    .testimonial-slide.active {
-      display: block;
-    }
-    .testimonial-slide strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.1em;
+
+    .testimonials-section h2 {
       color: #f0c808;
+      margin-bottom: 30px;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      padding: 10px;
+    }
+
+    .sticky-note {
+      padding: 20px;
+      width: 100%;
+      max-width: 250px;
+      min-height: 160px;
+      font-size: 0.95em;
+      font-style: italic;
+      border-radius: 5px;
+      box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transform: rotate(-1.5deg);
+    }
+
+    .sticky-yellow { background: #fff89a; color: #1b263b; }
+    .sticky-blue { background: #c1ecff; color: #1b263b; }
+    .sticky-green { background: #d4fcb5; color: #1b263b; }
+    .sticky-pink { background: #ffc7d1; color: #1b263b; }
+
+    .sticky-note strong {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: #0d1b2a;
     }
 
     .submit-button-container {
       text-align: center;
-      margin: 30px 0 20px;
+      margin: 30px 0 50px;
     }
+
     .submit-button {
       background-color: #f0c808;
       color: #0d1b2a;
@@ -114,23 +88,27 @@
       cursor: pointer;
       transition: background 0.3s;
     }
+
     .submit-button:hover {
       background-color: #e0b800;
     }
 
     .form-section {
-      padding: 40px 20px 80px;
+      padding: 30px 20px 80px;
       text-align: center;
       display: none;
       opacity: 0;
-      transition: opacity 0.8s ease-in-out;
+      transition: opacity 0.6s ease-in-out;
     }
+
     .form-section.show {
       display: block;
       opacity: 1;
     }
+
     .form-section iframe {
       width: 100%;
+      max-width: 800px;
       height: 700px;
       border: none;
     }
@@ -139,84 +117,66 @@
 <body>
 
   <header>
-    <h1> Thousands of Stories. One Common Thread — Our Teachers.
-      Teachers' Day 2025</h1>
+    <h1>Teachers' Day 2025</h1>
     <p>Graphic Era Alumni Association</p>
   </header>
 
-  <!-- QUOTE SLIDESHOW -->
-  <div class="quote-slideshow" id="quoteSlideshow">
-    <div class="quote-slide active">"A good teacher is like a candle — it consumes itself to light the way for others."</div>
-    <div class="quote-slide">"Teachers affect eternity; no one can tell where their influence stops." – Henry Brooks Adams</div>
-    <div class="quote-slide">"It is the supreme art of the teacher to awaken joy in creative expression and knowledge." – Albert Einstein</div>
-    <div class="quote-slide">"The influence of a good teacher can never be erased."</div>
-    <div class="quote-slide">"Teaching is the one profession that creates all other professions."</div>
-    <div class="quote-slide">"Behind every successful person is a teacher who believed in them."</div>
-    <div class="quote-slide">"To teach is to touch a life forever."</div>
-  </div>
-
-  <!-- PHOTO SLIDESHOW -->
-  <div class="slideshow">
-    <div class="slides">
-      <img src="New folder/WhatsApp Image 2023-10-30 at 5.18.21 PM.jpeg" alt="Teachers Day Photo 1">
-<img src="images/photo2.jpg" alt="Teachers Day Photo 2">
-<img src="images/photo3.jpg" alt="Teachers Day Photo 3">
-
-    </div>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <section class="testimonials-section">
-    <h2 style="color:#f0c808; margin-bottom: 30px;">Messages from Our Alumni</h2>
-
-    <div class="testimonial-slide active">
-      <strong>Ritika Sharma (MBA 2018)</strong>
-      "To all my professors at GEHU — thank you for shaping my future!"
-    </div>
-
-    <div class="testimonial-slide">
-      <strong>Abhishek Mehra (B.Tech CSE 2016)</strong>
-      "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words."
-    </div>
-
-    <div class="testimonial-slide">
-      <strong>Sneha Verma (BCA 2017)</strong>
-      "No amount of words can express the impact my teachers had on me. Forever thankful!"
+  <!-- Testimonials Section -->
+  <section class="testimonials-section" id="testimonialSection">
+    <h2>Messages from Our Alumni</h2>
+    <div class="testimonial-grid" id="testimonialGrid">
+      <!-- JavaScript will insert testimonials here -->
     </div>
   </section>
 
-  <!-- SUBMIT BUTTON -->
+  <!-- Submit Button -->
   <div class="submit-button-container">
     <button class="submit-button" onclick="showForm()">Submit Your Message</button>
   </div>
 
-  <!-- GOOGLE FORM (HIDDEN INITIALLY) -->
+  <!-- Google Form Section (Hidden initially) -->
   <div class="form-section" id="formSection">
     <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
   </div>
 
-  <!-- JAVASCRIPT FOR SLIDES -->
+  <!-- JavaScript -->
   <script>
-    // Testimonials rotation
-    let current = 0;
-    const slides = document.querySelectorAll('.testimonial-slide');
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 5000);
+    const feedbacks = [
+      { name: "Ritika Sharma (MBA 2018)", msg: "To all my professors at GEHU — thank you for shaping my future!" },
+      { name: "Abhishek Mehra (B.Tech CSE 2016)", msg: "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words." },
+      { name: "Sneha Verma (BCA 2017)", msg: "No amount of words can express the impact my teachers had on me. Forever thankful!" },
+      { name: "Ravi Joshi (BBA 2015)", msg: "You made me believe in myself, and that's the greatest gift." },
+      { name: "Priya Rawat (M.Tech 2019)", msg: "Your wisdom continues to guide me. Happy Teachers' Day!" },
+      { name: "Aman Thakur (B.Com 2014)", msg: "Thank you for being the light in my path, always." },
+      { name: "Kajal Bansal (BSc 2016)", msg: "Every day in class was an inspiration. Much love to all my teachers!" },
+      { name: "Deepak Rawal (MBA 2020)", msg: "You nurtured not just my career, but my character too." },
+      { name: "Mohit Chaudhary (B.Tech 2013)", msg: "The guidance I received shaped the foundation of who I am today." },
+      { name: "Pallavi Singh (MCA 2018)", msg: "Forever indebted to my professors for the patience, passion, and purpose they gave us." }
+    ];
 
-    // Quote rotation
-    let currentQuote = 0;
-    const quotes = document.querySelectorAll('#quoteSlideshow .quote-slide');
-    setInterval(() => {
-      quotes[currentQuote].classList.remove('active');
-      currentQuote = (currentQuote + 1) % quotes.length;
-      quotes[currentQuote].classList.add('active');
-    }, 5000);
+    const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
+    let currentIndex = 0;
 
-    // Show Form on Button Click
+    function renderTestimonials() {
+      const container = document.getElementById('testimonialGrid');
+      container.innerHTML = '';
+
+      for (let i = 0; i < 4; i++) {
+        const index = (currentIndex + i) % feedbacks.length;
+        const feedback = feedbacks[index];
+        const div = document.createElement('div');
+        div.className = `sticky-note ${colors[i % colors.length]}`;
+        div.innerHTML = `${feedback.msg}<strong>– ${feedback.name}</strong>`;
+        container.appendChild(div);
+      }
+
+      currentIndex = (currentIndex + 4) % feedbacks.length;
+    }
+
+    renderTestimonials();
+    setInterval(renderTestimonials, 8000); // Change every 8 seconds
+
     function showForm() {
       const form = document.getElementById('formSection');
       form.classList.add('show');
