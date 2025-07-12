@@ -1,59 +1,139 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Teachers' Day Celebration - Alumni Testimonials</title>
+  <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    header { background-color: #3f51b5; color: white; padding: 20px; text-align: center; }
-    section { padding: 20px; }
-    form { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
-    input, textarea { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
-    button { background-color: #3f51b5; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
-    .testimonials { margin-top: 40px; }
-    .testimonial { background: #ffffff; padding: 15px; border-left: 5px solid #3f51b5; margin-bottom: 15px; border-radius: 5px; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1b2a;
+      color: #ffffff;
+    }
+    header {
+      background-color: #1b263b;
+      color: #f0c808;
+      text-align: center;
+      padding: 80px 20px 50px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    .quote {
+      background-color: #f0c808;
+      color: #0d1b2a;
+      text-align: center;
+      padding: 20px;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .submit-button-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .submit-button {
+      background-color: #f0c808;
+      color: #0d1b2a;
+      font-size: 1.1em;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-button:hover {
+      background-color: #e0b800;
+    }
+    .form-section {
+      display: none;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .form-section iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
+    .testimonials-section {
+      padding: 50px 20px;
+      background-color: #1b263b;
+      text-align: center;
+    }
+    .testimonial-slide {
+      display: none;
+      font-size: 1.2em;
+      margin: 20px auto;
+      max-width: 800px;
+      background: #415a77;
+      padding: 30px;
+      border-radius: 10px;
+      border-left: 5px solid #f0c808;
+    }
+    .testimonial-slide.active {
+      display: block;
+    }
+    .testimonial-slide strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.1em;
+      color: #f0c808;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Happy Teachers' Day!</h1>
-    <p>From Our Alumni, With Love & Gratitude 💐</p>
+    <h1>Teachers' Day 2025</h1>
+    <p>Graphic Era Alumni Association</p>
   </header>
 
-  <section>
-  <h2>Submit Your Testimonial</h2>
-  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?usp=header" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</section>
+  <div class="quote">
+    "A good teacher is like a candle — it consumes itself to light the way for others."
+  </div>
 
+  <div class="submit-button-container">
+    <button class="submit-button" onclick="document.querySelector('.form-section').style.display='block'; window.scrollTo(0, document.body.scrollHeight);">Submit Your Message</button>
+  </div>
 
-    <div class="testimonials" id="testimonialsSection">
-      <h2>Messages from Alumni</h2>
-      <!-- Testimonials will appear here -->
+  <div class="form-section">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
+  </div>
+
+  <section class="testimonials-section">
+    <h2 style="color:#f0c808; margin-bottom: 30px;">Alumni Tributes</h2>
+
+    <div class="testimonial-slide active">
+      <strong>Ritika Sharma (MBA 2018)</strong>
+      "To all my professors at GEHU — thank you for shaping my future!"
+    </div>
+
+    <div class="testimonial-slide">
+      <strong>Abhishek Mehra (B.Tech CSE 2016)</strong>
+      "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words."
+    </div>
+
+    <div class="testimonial-slide">
+      <strong>Sneha Verma (BCA 2017)</strong>
+      "No amount of words can express the impact my teachers had on me. Forever thankful!"
     </div>
   </section>
 
   <script>
-    const form = document.getElementById('testimonialForm');
-    const testimonialsSection = document.getElementById('testimonialsSection');
+    let current = 0;
+    const slides = document.querySelectorAll('.testimonial-slide');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const batch = document.getElementById('batch').value;
-      const message = document.getElementById('message').value;
-
-      const testimonial = document.createElement('div');
-      testimonial.className = 'testimonial';
-      testimonial.innerHTML = `<strong>${name} (${batch})</strong><p>${message}</p>`;
-      testimonialsSection.appendChild(testimonial);
-
-      form.reset();
-    });
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
   </script>
 
 </body>
 </html>
+
