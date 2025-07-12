@@ -32,6 +32,35 @@
       font-style: italic;
       font-weight: bold;
     }
+    .slideshow {
+      position: relative;
+      max-width: 90%;
+      margin: 30px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .slides {
+      display: flex;
+      width: 500%;
+      animation: slide 20s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      20% { transform: translateX(0%); }
+      25% { transform: translateX(-100%); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      70% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      95% { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
     .testimonials-section {
       padding: 50px 20px 30px;
       background-color: #1b263b;
@@ -95,6 +124,15 @@
     "A good teacher is like a candle — it consumes itself to light the way for others."
   </div>
 
+  <div class="slideshow">
+    <div class="slides">
+      <img src="https://i.imgur.com/k8Tn5DE.jpg" alt="1">
+      <img src="https://i.imgur.com/0jN8ZGr.jpg" alt="2">
+      <img src="https://i.imgur.com/tCkbPea.jpg" alt="3">
+      <img src="https://i.imgur.com/JHod0Zy.jpg" alt="4">
+    </div>
+  </div>
+
   <section class="testimonials-section">
     <h2 style="color:#f0c808; margin-bottom: 30px;">Messages from Our Alumni</h2>
 
@@ -136,3 +174,4 @@
 
 </body>
 </html>
+
