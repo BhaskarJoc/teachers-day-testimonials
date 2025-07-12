@@ -195,36 +195,75 @@
   </div>
 
   <!-- Form Section -->
-  <div class="form-section" id="formSection">
-    <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message or Poem</h2>
- <form action="#" method="post">
+  <form action="#" method="post" style="max-width: 500px; margin: auto;">
   <label>
-    Name:
-    <input type="text" name="name" required />
+    Name:<br />
+    <input type="text" name="name" required style="width: 100%; padding: 8px;" />
   </label>
   <br /><br />
 
   <label>
-    Batch:
-    <select name="batch" required>
+    Batch:<br />
+    <select name="batch" required style="width: 100%; padding: 8px;">
       <option value="">Select Batch</option>
       <!-- Years from 1998 to 2025 -->
-      <!-- You can generate this dynamically using JS if needed -->
-      <!-- For now, statically listing them -->
-      <script>
-        for (let year = 1998; year <= 2025; year++) {
-          document.write(<option value="${year}">${year}</option>);
-        }
-      </script>
+      <!-- Static options -->
+      <!-- You can use JS if preferred -->
+      <!-- But static works better for HTML forms -->
+      <option>1998</option>
+      <option>1999</option>
+      <option>2000</option>
+      <option>2001</option>
+      <option>2002</option>
+      <option>2003</option>
+      <option>2004</option>
+      <option>2005</option>
+      <option>2006</option>
+      <option>2007</option>
+      <option>2008</option>
+      <option>2009</option>
+      <option>2010</option>
+      <option>2011</option>
+      <option>2012</option>
+      <option>2013</option>
+      <option>2014</option>
+      <option>2015</option>
+      <option>2016</option>
+      <option>2017</option>
+      <option>2018</option>
+      <option>2019</option>
+      <option>2020</option>
+      <option>2021</option>
+      <option>2022</option>
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
     </select>
   </label>
   <br /><br />
 
   <label>
-    Message:
-    <textarea name="message" rows="5" required></textarea>
+    Course:<br />
+    <select name="course" required style="width: 100%; padding: 8px;">
+      <option value="">Select Course</option>
+      <option>BBA</option>
+      <option>B.Com</option>
+      <option>MCA</option>
+      <option>BCA</option>
+      <option>B.Tech CSE</option>
+    </select>
   </label>
   <br /><br />
+
+  <label>
+    Message or Poem:<br />
+    <textarea name="message" rows="5" required style="width: 100%; padding: 8px;"></textarea>
+  </label>
+  <br /><br />
+
+  <button type="submit" style="padding: 10px 20px; background: #f0c808; border: none; color: #0d1b2a; font-weight: bold; cursor: pointer;">Send</button>
+</form>
+
 
   <button type="submit">Send</button>
 </form>
