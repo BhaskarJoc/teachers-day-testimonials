@@ -32,35 +32,8 @@
       font-style: italic;
       font-weight: bold;
     }
-    .submit-button-container {
-      text-align: center;
-      margin: 30px 0;
-    }
-    .submit-button {
-      background-color: #f0c808;
-      color: #0d1b2a;
-      font-size: 1.1em;
-      padding: 12px 30px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .submit-button:hover {
-      background-color: #e0b800;
-    }
-    .form-section {
-      display: none;
-      padding: 30px 20px;
-      text-align: center;
-    }
-    .form-section iframe {
-      width: 100%;
-      height: 700px;
-      border: none;
-    }
     .testimonials-section {
-      padding: 50px 20px;
+      padding: 50px 20px 30px;
       background-color: #1b263b;
       text-align: center;
     }
@@ -83,6 +56,32 @@
       font-size: 1.1em;
       color: #f0c808;
     }
+    .submit-button-container {
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+    .submit-button {
+      background-color: #f0c808;
+      color: #0d1b2a;
+      font-size: 1.1em;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .submit-button:hover {
+      background-color: #e0b800;
+    }
+    .form-section {
+      padding: 40px 20px 80px;
+      text-align: center;
+    }
+    .form-section iframe {
+      width: 100%;
+      height: 700px;
+      border: none;
+    }
   </style>
 </head>
 <body>
@@ -96,16 +95,8 @@
     "A good teacher is like a candle — it consumes itself to light the way for others."
   </div>
 
-  <div class="submit-button-container">
-    <button class="submit-button" onclick="document.querySelector('.form-section').style.display='block'; window.scrollTo(0, document.body.scrollHeight);">Submit Your Message</button>
-  </div>
-
-  <div class="form-section">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
-  </div>
-
   <section class="testimonials-section">
-    <h2 style="color:#f0c808; margin-bottom: 30px;">Alumni Tributes</h2>
+    <h2 style="color:#f0c808; margin-bottom: 30px;">Messages from Our Alumni</h2>
 
     <div class="testimonial-slide active">
       <strong>Ritika Sharma (MBA 2018)</strong>
@@ -123,6 +114,15 @@
     </div>
   </section>
 
+  <div class="submit-button-container">
+    <button class="submit-button" onclick="document.getElementById('formSection').scrollIntoView({behavior: 'smooth'});">Submit Your Message</button>
+  </div>
+
+  <div class="form-section" id="formSection">
+    <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message</h2>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
+  </div>
+
   <script>
     let current = 0;
     const slides = document.querySelectorAll('.testimonial-slide');
@@ -136,4 +136,3 @@
 
 </body>
 </html>
-
