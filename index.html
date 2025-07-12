@@ -170,7 +170,7 @@
 
   <!-- Testimonials and Poems Section -->
   <section class="testimonials-section" id="testimonialSection">
-    <h2>Alumni Contributions</h2>
+    <h2>With Love, From Alumni</h2>
     
     <!-- Tabs -->
     <div class="tab-buttons">
@@ -196,10 +196,55 @@
 
   <!-- Form Section -->
   <div class="form-section" id="formSection">
+   <div class="form-section" id="formSection">
     <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message or Poem</h2>
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
+    <form>
+      <label>
+        Name:
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Batch:
+        <select name="batch" required>
+          <option value="">Select Batch</option>
+          <!-- Static years from 1998–2025 -->
+          <script>
+            for (let year = 1998; year <= 2025; year++) {
+              document.write(`<option value="${year}">${year}</option>`);
+            }
+          </script>
+        </select>
+      </label>
+
+      <label>
+        Course:
+        <select name="course" required>
+          <option value="">Select Course</option>
+          <option>BBA</option>
+          <option>B.Com</option>
+          <option>MCA</option>
+          <option>BCA</option>
+          <option>B.Tech CSE</option>
+        </select>
+      </label>
+
+      <label>
+        Message or Poem:
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <button type="submit">Send</button>
+    </form>
   </div>
 
+  <script>
+    function toggleForm() {
+      const form = document.getElementById('formSection');
+      form.classList.add('show');
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
   <!-- JavaScript -->
   <script>
     const feedbacks = [
@@ -294,55 +339,7 @@
   </div>
 
   <!-- Hidden Form Section -->
-  <div class="form-section" id="formSection">
-    <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message or Poem</h2>
-    <form>
-      <label>
-        Name:
-        <input type="text" name="name" required />
-      </label>
-
-      <label>
-        Batch:
-        <select name="batch" required>
-          <option value="">Select Batch</option>
-          <!-- Static years from 1998–2025 -->
-          <script>
-            for (let year = 1998; year <= 2025; year++) {
-              document.write(`<option value="${year}">${year}</option>`);
-            }
-          </script>
-        </select>
-      </label>
-
-      <label>
-        Course:
-        <select name="course" required>
-          <option value="">Select Course</option>
-          <option>BBA</option>
-          <option>B.Com</option>
-          <option>MCA</option>
-          <option>BCA</option>
-          <option>B.Tech CSE</option>
-        </select>
-      </label>
-
-      <label>
-        Message or Poem:
-        <textarea name="message" rows="5" required></textarea>
-      </label>
-
-      <button type="submit">Send</button>
-    </form>
-  </div>
-
-  <script>
-    function toggleForm() {
-      const form = document.getElementById('formSection');
-      form.classList.add('show');
-      form.scrollIntoView({ behavior: 'smooth' });
-    }
-  </script>
+  
 
 </body>
 </html>
