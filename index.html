@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title> Happy Teachers' Day 2025 | Graphic Era Alumni Association</title>
+  <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,14 +24,28 @@
     header p {
       font-size: 1.2em;
     }
-    .quote {
+
+    .quote-slideshow {
       background-color: #f0c808;
       color: #0d1b2a;
       text-align: center;
-      padding: 20px;
       font-style: italic;
       font-weight: bold;
+      padding: 25px 20px;
+      min-height: 90px;
+      position: relative;
     }
+    .quote-slide {
+      display: none;
+      font-size: 1.1em;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .quote-slide.active {
+      display: block;
+      opacity: 1;
+    }
+
     .slideshow {
       position: relative;
       max-width: 90%;
@@ -60,6 +74,7 @@
       90% { transform: translateX(0%); }
       100% { transform: translateX(0%); }
     }
+
     .testimonials-section {
       padding: 50px 20px 30px;
       background-color: #1b263b;
@@ -84,6 +99,7 @@
       font-size: 1.1em;
       color: #f0c808;
     }
+
     .submit-button-container {
       text-align: center;
       margin: 30px 0 20px;
@@ -101,9 +117,17 @@
     .submit-button:hover {
       background-color: #e0b800;
     }
+
     .form-section {
       padding: 40px 20px 80px;
       text-align: center;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .form-section.show {
+      display: block;
+      opacity: 1;
     }
     .form-section iframe {
       width: 100%;
@@ -115,17 +139,22 @@
 <body>
 
   <header>
-    
-    <h1>Thousands of Stories. One Common Thread — Our Teachers.
-      Happy Teachers' Day 2025</h1>
+    <h1>Teachers' Day 2025</h1>
     <p>Graphic Era Alumni Association</p>
   </header>
 
-  <div class="quote">
-    "A good teacher is like a candle — it consumes itself to light the way for others."
+  <!-- QUOTE SLIDESHOW -->
+  <div class="quote-slideshow" id="quoteSlideshow">
+    <div class="quote-slide active">"A good teacher is like a candle — it consumes itself to light the way for others."</div>
+    <div class="quote-slide">"Teachers affect eternity; no one can tell where their influence stops." – Henry Brooks Adams</div>
+    <div class="quote-slide">"It is the supreme art of the teacher to awaken joy in creative expression and knowledge." – Albert Einstein</div>
+    <div class="quote-slide">"The influence of a good teacher can never be erased."</div>
+    <div class="quote-slide">"Teaching is the one profession that creates all other professions."</div>
+    <div class="quote-slide">"Behind every successful person is a teacher who believed in them."</div>
+    <div class="quote-slide">"To teach is to touch a life forever."</div>
   </div>
 
-  <!-- Photo Slideshow -->
+  <!-- PHOTO SLIDESHOW -->
   <div class="slideshow">
     <div class="slides">
       <img src="https://drive.google.com/uc?export=view&id=1NsK_fA6HCE9V_lRQOvSo-MMtK7tDIhDb" alt="Photo 1">
@@ -134,7 +163,7 @@
     </div>
   </div>
 
-  <!-- Testimonials -->
+  <!-- TESTIMONIALS -->
   <section class="testimonials-section">
     <h2 style="color:#f0c808; margin-bottom: 30px;">Messages from Our Alumni</h2>
 
@@ -154,30 +183,44 @@
     </div>
   </section>
 
-  <!-- Submit Button -->
+  <!-- SUBMIT BUTTON -->
   <div class="submit-button-container">
-    <button class="submit-button" onclick="document.getElementById('formSection').scrollIntoView({behavior: 'smooth'});">Submit Your Message</button>
+    <button class="submit-button" onclick="showForm()">Submit Your Message</button>
   </div>
 
-  <!-- Google Form -->
+  <!-- GOOGLE FORM (HIDDEN INITIALLY) -->
   <div class="form-section" id="formSection">
     <h2 style="margin-bottom:20px; color: #f0c808;">Submit Your Message</h2>
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScfbaxGByNfXvGmngt0cKbL4avlQzXI5uWe9QYhsbMOYiOBeA/viewform?embedded=true">Loading…</iframe>
   </div>
 
-  <!-- Testimonial Script -->
+  <!-- JAVASCRIPT FOR SLIDES -->
   <script>
+    // Testimonials rotation
     let current = 0;
     const slides = document.querySelectorAll('.testimonial-slide');
-
     setInterval(() => {
       slides[current].classList.remove('active');
       current = (current + 1) % slides.length;
       slides[current].classList.add('active');
     }, 5000);
+
+    // Quote rotation
+    let currentQuote = 0;
+    const quotes = document.querySelectorAll('#quoteSlideshow .quote-slide');
+    setInterval(() => {
+      quotes[currentQuote].classList.remove('active');
+      currentQuote = (currentQuote + 1) % quotes.length;
+      quotes[currentQuote].classList.add('active');
+    }, 5000);
+
+    // Show Form on Button Click
+    function showForm() {
+      const form = document.getElementById('formSection');
+      form.classList.add('show');
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
 
 </body>
 </html>
-
-
