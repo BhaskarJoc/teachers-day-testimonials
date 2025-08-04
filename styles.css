@@ -164,7 +164,7 @@ header p {
   flex-direction: column;
   text-align: left;
   font-weight: bold;
-  colour: white;
+  color: white;
 }
 
 .form-section input,
