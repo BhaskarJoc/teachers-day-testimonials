@@ -28,11 +28,10 @@ body::before {
 header {
   background: rgba(128, 0, 0, 0.9);
   color: white;
-  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 10px 20px;
   position: fixed;
   top: 0;
   left: 0;
@@ -44,29 +43,28 @@ header {
 .header-left {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  justify-content: center;
 }
 
 .header-left h1 {
   font-size: 1.8rem;
   margin: 0;
-  transition: all 0.5s ease;
+  line-height: 1.2;
 }
 
 .header-left p {
   font-size: 0.9rem;
-  margin: 0;
-  transition: all 0.5s ease;
+  margin: 2px 0 0;
+  line-height: 1.2;
 }
 
 .header-right .logo {
   height: 50px;
   width: auto;
-  transition: all 0.5s ease;
 }
 
 header.scrolled {
-  height: 60px;
+  padding: 5px 20px;
   background: rgba(128, 0, 0, 0.95);
 }
 
@@ -269,7 +267,6 @@ form button:hover {
   header {
     flex-direction: column;
     align-items: center;
-    height: auto;
     padding: 10px;
   }
 
@@ -277,4 +274,5 @@ form button:hover {
     margin-top: 5px;
   }
 }
+
 
