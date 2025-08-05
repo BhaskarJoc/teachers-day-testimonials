@@ -1,184 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <​meta charset="UTF-8" />
- <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
- <​meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      background: #800000;
+      color: white;
+      padding: 20px;
+    }
+    .testimonials-section {
+      padding: 30px;
+      text-align: center;
+    }
+    .tab-buttons {
+      margin-bottom: 20px;
+    }
+    .tab-button {
+      background: #ddd;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 5px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+    .tab-button.active, .tab-button:hover {
+      background: #800000;
+      color: white;
+    }
+    .testimonial-grid, .poem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .sticky-note {
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 14px;
+      background: #fffacd;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .sticky-yellow { background: #fffacd; }
+    .sticky-blue { background: #add8e6; }
+    .sticky-green { background: #98fb98; }
+    .sticky-pink { background: #ffb6c1; }
+    .poem-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      text-align: left;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    .submit-button-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .submit-button {
+      background: #800000;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .form-section {
+      display: none;
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .form-section.show {
+      display: block;
+      margin-top: 30px;
+    }
+    form label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background: #800000;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
 
- <header>
- <h1>Teachers' Day 2025</h1>
- <p>Graphic Era Alumni Association</p>
- </header>
+  <header>
+    <h1>Teachers' Day 2025</h1>
+    <p>Graphic Era Alumni Association</p>
+  </header>
 
- <section class="testimonials-section" id="testimonialSection">
- <h2>Alumni Contributions</h2>
- <div class="tab-buttons">
- <button class="tab-button active" onclick​="showTab('messages')">Messages</button>
- <button class="tab-button" onclick​="showTab('poems')">Poems</button>
- </div>
+  <section class="testimonials-section">
+    <h2>Alumni Contributions</h2>
+    <div class="tab-buttons">
+      <button class="tab-button active" onclick="showTab('messages')">Messages</button>
+      <button class="tab-button" onclick="showTab('poems')">Poems</button>
+    </div>
+    <div class="testimonial-grid" id="messagesTab"></div>
+    <div class="poem-grid" id="poemsTab" style="display:none;"></div>
+  </section>
 
- <div class="testimonial-grid" id="messagesTab"></div>
- <div class="poem-grid" id="poemsTab" style="display: none;"></div>
- </section>
+  <div class="submit-button-container">
+    <button class="submit-button" onclick="toggleForm()">Submit Your Message or Poem</button>
+  </div>
 
- <div class="submit-button-container">
- <button class="submit-button" onclick​="toggleForm()">Submit Your Message or Poem</button>
- </div>
+  <div class="form-section" id="formSection">
+    <h2>Submit Your Message or Poem</h2>
+    <form id="contact-form">
+      <label>Name:</label>
+      <input type="text" name="name" required />
 
- <div class="form-section" id="formSection">
- <h2>Submit Your Message or Poem</h2>
- <form id="contact-form">
- <label>Name:
- <input type="text" name="name" required />
- </label>
+      <label>Batch:</label>
+      <select name="batch" required>
+        <option value="">Select Batch</option>
+      </select>
 
- <label>Batch:
- <select name="batch" required>
- <option value="">Select Batch</option>
- <!-- Batches from 1998–2025 -->
- <​script>
- for (let year = 1998; year <= 2025; year++) {
- document.write(`<option value="${year}">${year}</option>`);
- }
- <​/script>
- </select>
- </label>
+      <label>Course:</label>
+      <select name="course" required>
+        <option value="">Select Course</option>
+        <option>B.Tech</option>
+        <option>M.Tech</option>
+        <option>BCA</option>
+        <option>MCA</option>
+        <option>BBA</option>
+        <option>MBA</option>
+        <option>B.Com(H)</option>
+        <option>B.Pharma</option>
+      </select>
 
- <label>Course:
- <select name="course" required>
- <option value="">Select Course</option>
- <option>B.Tech</option>
- <option>M.Tech</option>
- <option>BCA</option>
- <option>MCA</option>
- <option>BBA</option>
- <option>MBA</option>
- <option>B.Com(H)</option>
- <option>B.Pharma</option>
- </select>
- </label>
-<label>Campus:
- <select name="campus" required>
- <option value="">Select Campus</option>
- <option>GEU, Dehradun</option>
- <option>GEHU, Dehradun</option>
- <option>GEHU, Bhimtal</option>
- <option>GEHU, Haldwani</option>
- </select>
- </label>
- <label>Message or Poem:
- <textarea name="message" rows="5" required></textarea>
- </label>
+      <label>Campus:</label>
+      <select name="campus" required>
+        <option value="">Select Campus</option>
+        <option>GEU, Dehradun</option>
+        <option>GEHU, Dehradun</option>
+        <option>GEHU, Bhimtal</option>
+        <option>GEHU, Haldwani</option>
+      </select>
 
- <button type="submit">Send</button>
- </form>
- </div>
+      <label>Message or Poem:</label>
+      <textarea name="message" rows="5" required></textarea>
 
- <​script>
+      <button type="submit">Send</button>
+    </form>
+  </div>
 
- // Add this script to your HTML file
-const form = document.getElementById('contact-form');
-const scriptURL = 'https://script.google.com/macros/s/AKfycbw6kioS7LNMPXN0Lu18A03X4Ha8TI5BTEtwmlJSrOTQOltKUW7iQizAlXPNbHjxwDov8Q/exec';
+  <script defer>
+    // Populate batch years
+    const batchSelect = document.querySelector('select[name="batch"]');
+    for (let year = 1998; year <= 2025; year++) {
+      const option = document.createElement('option');
+      option.value = year;
+      option.textContent = year;
+      batchSelect.appendChild(option);
+    }
 
-form.addEventListener('submit', e => {
- e.preventDefault(); // This is the crucial line that stops the page from redirecting
- const submitButton = form.querySelector('button[type="submit"]');
- submitButton.disabled = true;
- submitButton.textContent = 'Sending...';
+    // Google Script form submission
+    const form = document.getElementById('contact-form');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6kioS7LNMPXN0Lu18A03X4Ha8TI5BTEtwmlJSrOTQOltKUW7iQizAlXPNbHjxwDov8Q/exec';
 
- fetch(scriptURL, { method: 'POST', body: new FormData(form)})
- .then(response => {
- alert('Thank you! Your message has been sent successfully.');
- form.reset();
- submitButton.disabled = false;
- submitButton.textContent = 'Send';
- })
- .catch(error => {
- console.error('Error!', error.message);
- alert('Oops! There was a problem submitting your form.');
- submitButton.disabled = false;
- submitButton.textContent = 'Send';
- });
-});
- 
- const feedbacks = [
- { name: "Ritika Sharma (MBA 2018)", msg: "To all my professors at GEHU — thank you for shaping my future!" },
- { name: "Abhishek Mehra (B.Tech CSE 2016)", msg: "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words." },
- { name: "Sneha Verma (BCA 2017)", msg: "No amount of words can express the impact my teachers had on me. Forever thankful!" },
- { name: "Ravi Joshi (BBA 2015)", msg: "You made me believe in myself, and that's the greatest gift." },
- { name: "Priya Rawat (M.Tech 2019)", msg: "Your wisdom continues to guide me. Happy Teachers' Day!" },
- { name: "Aman Thakur (B.Com 2014)", msg: "Thank you for being the light in my path, always." },
- { name: "Kajal Bansal (BSc 2016)", msg: "Every day in class was an inspiration. Much love to all my teachers!" },
- { name: "Deepak Rawal (MBA 2020)", msg: "You nurtured not just my career, but my character too." }
- ];
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const submitButton = form.querySelector('button[type="submit"]');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending...';
 
- const poems = [
- {
- title: "A Tribute to My Teacher",
- lines: `You lit the path when it was dark,\nYou left in me a hopeful spark,\nWith every word you gently said,\nYou shaped the thoughts inside my head.`,
- author: "Tanya Kapoor (MBA 2019)"
- },
- {
- title: "To the Guiding Light",
- lines: `In chalk and board, you built my dreams,\nMore powerful than a thousand reams.\nNot just a teacher, but a guide,\nIn every storm, you stood beside.`,
- author: "Raghav Joshi (B.Tech 2017)"
- },
- {
- title: "Silent Hero",
- lines: `You never asked for thanks or praise,\nYet changed my life in countless ways.\nYour words are etched within my core,\nYou made me someone I adore.`,
- author: "Anjali Bansal (BCA 2016)"
- }
- ];
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(() => {
+          alert('Thank you! Your message has been sent successfully.');
+          form.reset();
+        })
+        .catch(error => {
+          console.error('Error!', error.message);
+          alert('Oops! There was a problem submitting your form.');
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = 'Send';
+        });
+    });
 
- const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
- let currentIndex = 0;
+    // Testimonials and Poems
+    const feedbacks = [
+      { name: "Ritika Sharma (MBA 2018)", msg: "To all my professors at GEHU — thank you for shaping my future!" },
+      { name: "Abhishek Mehra (B.Tech CSE 2016)", msg: "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words." },
+      { name: "Sneha Verma (BCA 2017)", msg: "No amount of words can express the impact my teachers had on me. Forever thankful!" },
+      { name: "Ravi Joshi (BBA 2015)", msg: "You made me believe in myself, and that's the greatest gift." },
+      { name: "Priya Rawat (M.Tech 2019)", msg: "Your wisdom continues to guide me. Happy Teachers' Day!" },
+      { name: "Aman Thakur (B.Com 2014)", msg: "Thank you for being the light in my path, always." },
+      { name: "Kajal Bansal (BSc 2016)", msg: "Every day in class was an inspiration. Much love to all my teachers!" },
+      { name: "Deepak Rawal (MBA 2020)", msg: "You nurtured not just my career, but my character too." }
+    ];
 
- function renderTestimonials() {
- const container = document.getElementById('messagesTab');
- container.innerHTML = '';
- for (let i = 0; i < 4; i++) {
- const index = (currentIndex + i) % feedbacks.length;
- const feedback = feedbacks[index];
- const div = document.createElement('div');
- div.className = `sticky-note ${colors[i % colors.length]}`;
- div.innerHTML = `${feedback.msg}<strong>– ${feedback.name}</strong>`;
- container.appendChild(div);
- }
- currentIndex = (currentIndex + 4) % feedbacks.length;
- }
+    const poems = [
+      { title: "A Tribute to My Teacher", lines: "You lit the path when it was dark,\nYou left in me a hopeful spark,\nWith every word you gently said,\nYou shaped the thoughts inside my head.", author: "Tanya Kapoor (MBA 2019)" },
+      { title: "To the Guiding Light", lines: "In chalk and board, you built my dreams,\nMore powerful than a thousand reams.\nNot just a teacher, but a guide,\nIn every storm, you stood beside.", author: "Raghav Joshi (B.Tech 2017)" },
+      { title: "Silent Hero", lines: "You never asked for thanks or praise,\nYet changed my life in countless ways.\nYour words are etched within my core,\nYou made me someone I adore.", author: "Anjali Bansal (BCA 2016)" }
+    ];
 
- function renderPoems() {
- const container = document.getElementById('poemsTab');
- container.innerHTML = '';
- poems.forEach(poem => {
- const div = document.createElement('div');
- div.className = 'poem-card';
- div.innerHTML = `<strong>${poem.title}</strong><p>${poem.lines.replace(/\n/g, '<br>')}</p><strong>– ${poem.author}</strong>`;
- container.appendChild(div);
- });
- }
+    const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
+    let currentIndex = 0;
 
- function showTab(tab) {
- document.getElementById('messagesTab').style.display = (tab === 'messages') ? 'grid' : 'none';
- document.getElementById('poemsTab').style.display = (tab === 'poems') ? 'grid' : 'none';
- document.querySelectorAll('.tab-button').forEach(btn => {
- btn.classList.remove('active');
- if (btn.textContent.toLowerCase() === tab) btn.classList.add('active');
- });
- }
+    function renderTestimonials() {
+      const container = document.getElementById('messagesTab');
+      container.innerHTML = '';
+      for (let i = 0; i < 4; i++) {
+        const index = (currentIndex + i) % feedbacks.length;
+        const feedback = feedbacks[index];
+        const div = document.createElement('div');
+        div.className = `sticky-note ${colors[i % colors.length]}`;
+        div.innerHTML = `${feedback.msg}<br><strong>– ${feedback.name}</strong>`;
+        container.appendChild(div);
+      }
+      currentIndex = (currentIndex + 4) % feedbacks.length;
+    }
 
- function toggleForm() {
- const form = document.getElementById('formSection');
- form.classList.add('show');
- form.scrollIntoView({ behavior: 'smooth' });
- }
+    function renderPoems() {
+      const container = document.getElementById('poemsTab');
+      container.innerHTML = '';
+      poems.forEach(poem => {
+        const div = document.createElement('div');
+        div.className = 'poem-card';
+        div.innerHTML = `<strong>${poem.title}</strong><p>${poem.lines.replace(/\n/g, '<br>')}</p><strong>– ${poem.author}</strong>`;
+        container.appendChild(div);
+      });
+    }
 
- renderTestimonials();
- renderPoems();
- setInterval(renderTestimonials, 8000);
- <​/script>
+    function showTab(tab) {
+      document.getElementById('messagesTab').style.display = (tab === 'messages') ? 'grid' : 'none';
+      document.getElementById('poemsTab').style.display = (tab === 'poems') ? 'grid' : 'none';
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase() === tab) btn.classList.add('active');
+      });
+    }
+
+    function toggleForm() {
+      const form = document.getElementById('formSection');
+      form.classList.add('show');
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    renderTestimonials();
+    renderPoems();
+    setInterval(renderTestimonials, 8000);
+  </script>
+
 </body>
 </html>
+
