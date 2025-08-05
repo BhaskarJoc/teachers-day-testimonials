@@ -25,11 +25,6 @@ header h1 {
 header p {
   font-size: 1.2em;
 }
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('images/background.jpg') no-repeat center center fixed;
-  background-size: cover;
 }
 
 .testimonials-section {
