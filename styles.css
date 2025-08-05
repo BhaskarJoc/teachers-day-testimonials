@@ -26,22 +26,16 @@ body::before {
 
 /* HEADER */
 header {
+  text-align: center;
   background: rgba(128, 0, 0, 0.9);
   color: white;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 40px 20px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all 0.5s ease;
-}
-
-.header-content {
-  text-align: center;
   transition: all 0.5s ease;
 }
 
@@ -52,26 +46,20 @@ header p {
 }
 
 header.scrolled {
-  height: 60px;
-  justify-content: flex-end;
   background: rgba(128, 0, 0, 0.95);
-  padding: 0 20px;
-}
-
-header.scrolled .header-content {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  text-align: right;
+  padding: 10px 20px;
+  text-align: left;
 }
 
 header.scrolled h1 {
   font-size: 1.5rem;
+  transform: translateX(10px);
 }
 
 header.scrolled p {
   font-size: 0.9rem;
-  align-self: center;
+  transform: translateX(10px);
+  margin-top: 2px;
 }
 
 /* Alumni Contributions */
@@ -255,16 +243,10 @@ form button:hover {
 /* Responsive */
 @media (max-width: 768px) {
   header h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
-
-  .header-content {
-    flex-direction: column !important;
-    text-align: center !important;
-  }
-
-  header.scrolled {
-    justify-content: center;
+  .tab-buttons {
+    flex-direction: column;
+    gap: 10px;
   }
 }
-
