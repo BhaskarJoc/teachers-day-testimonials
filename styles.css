@@ -59,7 +59,7 @@ header {
 }
 
 .header-right .logo {
-  height: 80px; /* Increased logo size */
+  height: 100px; /* Increased logo size */
   width: auto;
   transition: height 0.3s ease;
 }
