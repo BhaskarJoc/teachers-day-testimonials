@@ -8,13 +8,15 @@
 </head>
 <body>
 
-  <header>
+  <!-- HEADER -->
+  <header id="mainHeader">
     <h1>Teachers' Day 2025</h1>
     <p>Graphic Era Alumni Association</p>
   </header>
 
+  <!-- ALUMNI CONTRIBUTIONS -->
   <section class="testimonials-section">
-    <h2>With Love, From Alumni</h2>
+    <h2>Alumni Contributions</h2>
     <div class="tab-buttons">
       <button class="tab-button active" onclick="showTab('messages')">Messages</button>
       <button class="tab-button" onclick="showTab('poems')">Poems</button>
@@ -23,10 +25,12 @@
     <div class="poem-grid" id="poemsTab" style="display:none;"></div>
   </section>
 
+  <!-- SUBMIT BUTTON -->
   <div class="submit-button-container">
     <button class="submit-button" onclick="toggleForm()">Submit Your Message or Poem</button>
   </div>
 
+  <!-- FORM SECTION -->
   <div class="form-section" id="formSection">
     <h2>Submit Your Message or Poem</h2>
     <form id="contact-form">
@@ -163,13 +167,21 @@
       form.scrollIntoView({ behavior: 'smooth' });
     }
 
+    // Header Scroll Transition
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
     renderTestimonials();
     renderPoems();
     setInterval(renderTestimonials, 8000);
   </script>
-
 </body>
 </html>
->
-</html>
+
 
