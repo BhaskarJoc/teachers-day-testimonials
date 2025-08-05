@@ -25,12 +25,34 @@ header h1 {
 header p {
   font-size: 1.2em;
 }
+
+/* TESTIMONIALS SECTION WITH BACKGROUND IMAGE */
+.testimonials-section {
+  position: relative;
+  padding: 50px 20px 40px;
+  text-align: center;
+  color: white;
+  background: url('images/testimonials-bg.jpg') no-repeat center center;
+  background-size: cover;
 }
 
-.testimonials-section {
-  padding: 50px 20px 40px;
-  background-color: #1b263b;
-  text-align: center;
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* overlay for better readability */
+  z-index: 0;
+}
+
+.testimonials-section h2,
+.tab-buttons,
+.testimonial-grid,
+.poem-grid {
+  position: relative;
+  z-index: 1;
 }
 
 .testimonials-section h2 {
