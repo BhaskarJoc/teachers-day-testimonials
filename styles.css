@@ -59,8 +59,9 @@ header {
 }
 
 .header-right .logo {
-  height: 50px;
+  height: 80px; /* Increased logo size */
   width: auto;
+  transition: height 0.3s ease;
 }
 
 header.scrolled {
@@ -77,7 +78,7 @@ header.scrolled .header-left p {
 }
 
 header.scrolled .header-right .logo {
-  height: 40px;
+  height: 65px; /* Logo size reduced on scroll */
 }
 
 /* Alumni Contributions */
@@ -274,5 +275,3 @@ form button:hover {
     margin-top: 5px;
   }
 }
-
-
