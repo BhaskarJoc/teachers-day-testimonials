@@ -190,7 +190,7 @@
       }
     });
 
-    // Background Slideshow
+    // Background Slideshow (with fade effect)
     const slideshow = document.getElementById('slideshow');
     const backgroundImages = [
       'New folder/KK3A0918.JPG',
@@ -200,8 +200,12 @@
     let currentImageIndex = 0;
 
     function changeBackground() {
-      currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
-      slideshow.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+      slideshow.classList.add('fade');
+      setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+        slideshow.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
+        slideshow.classList.remove('fade');
+      }, 500);
     }
     setInterval(changeBackground, 7000);
 
