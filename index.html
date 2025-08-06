@@ -2,171 +2,283 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('New folder/KK3A0918.JPG') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    header {
+      background: #b30000;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.4s ease-in-out;
+      z-index: 1000;
+    }
+
+    header.shrink {
+      justify-content: space-between;
+      padding: 10px 30px;
+    }
+
+    header img {
+      height: 50px;
+      transition: height 0.4s ease-in-out;
+    }
+
+    header.shrink img {
+      height: 35px;
+    }
+
+    header h1, header p {
+      margin: 0;
+    }
+
+    header.shrink h1 {
+      font-size: 20px;
+    }
+
+    .testimonials-section {
+      margin-top: 120px;
+      text-align: center;
+      color: white;
+    }
+
+    .tab-buttons {
+      margin: 20px 0;
+    }
+
+    .tab-button {
+      padding: 10px 20px;
+      margin: 0 5px;
+      border: none;
+      background: #800000;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .tab-button.active {
+      background: #ff4d4d;
+    }
+
+    .testimonial-grid, .poem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .sticky-note {
+      padding: 15px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.85);
+      color: black;
+      font-family: 'Noto Sans Devanagari', sans-serif;
+      white-space: pre-line;
+    }
+
+    .poem-card {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px;
+      border-radius: 10px;
+      color: black;
+      text-align: left;
+    }
+
+    .submit-button-container {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .submit-button {
+      padding: 10px 20px;
+      background: #b30000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .form-section {
+      display: none;
+      background: rgba(255, 255, 255, 0.9);
+      margin: 20px auto;
+      max-width: 500px;
+      padding: 20px;
+      border-radius: 10px;
+      color: black;
+    }
+
+    .form-section.show {
+      display: block;
+    }
+
+    .form-section label {
+      display: block;
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .form-section input, 
+    .form-section select, 
+    .form-section textarea {
+      width: 100%;
+      margin-top: 5px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-section button {
+      margin-top: 15px;
+      width: 100%;
+      padding: 10px;
+      background: #b30000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .photo-note {
+      margin-top: 10px;
+      font-size: 14px;
+      text-align: center;
+      color: #555;
+    }
+
+    .photo-note a {
+      color: #800000;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .photo-note a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header id="mainHeader">
-    <div class="header-left">
-      <h1>Teachers' Day 2025</h1>
-      <p>Graphic Era Alumni Association</p>
-    </div>
-    <div class="header-right">
-      <img src="New folder/Alumni_Association__1_-removebg-preview.png" alt="Logo" class="logo" />
-    </div>
-  </header>
-
-  <!-- ALUMNI CONTRIBUTIONS -->
-  <section class="testimonials-section">
-    <h2>With Love, From Alumni</h2>
-    <div class="tab-buttons">
-      <button class="tab-button active" onclick="showTab('messages')">Messages</button>
-      <button class="tab-button" onclick="showTab('poems')">Poems</button>
-    </div>
-    <div class="testimonial-grid" id="messagesTab"></div>
-    <div class="poem-grid" id="poemsTab" style="display:none;"></div>
-  </section>
-
-  <!-- SUBMIT BUTTON -->
-  <div class="submit-button-container">
-    <button class="submit-button" onclick="toggleForm()">Submit Your Message or Poem</button>
+<header id="mainHeader">
+  <img src="logo.png" alt="Logo">
+  <div>
+    <h1>Teachers' Day 2025</h1>
+    <p>Graphic Era Alumni Association</p>
   </div>
+</header>
 
-  <!-- FORM SECTION -->
-  <div class="form-section" id="formSection">
-    <h2>Submit Your Message or Poem</h2>
-    <form id="contact-form">
-      <label>Name:</label>
-      <input type="text" name="name" required />
+<section class="testimonials-section" id="testimonialSection">
+  <h2>Alumni Contributions</h2>
+  <div class="tab-buttons">
+    <button class="tab-button active" onclick="showTab('messages')">Messages</button>
+    <button class="tab-button" onclick="showTab('poems')">Poems</button>
+  </div>
+  <div class="testimonial-grid" id="messagesTab"></div>
+  <div class="poem-grid" id="poemsTab" style="display: none;"></div>
+</section>
 
-      <label>Batch:</label>
-      <select name="batch" required>
-        <option value="">Select Batch</option>
-      </select>
+<div class="submit-button-container">
+  <button class="submit-button" onclick="toggleForm()">Submit Your Message or Poem</button>
+</div>
 
-      <label>Course:</label>
-      
+<div class="form-section" id="formSection">
+  <h2>Submit Your Message or Poem</h2>
+  <form id="contact-form">
+    <label>Name:</label>
+    <input type="text" name="name" required />
 
-  <select name="course" required>
-  <option value=""><b></b>Select Course</b></option>
+    <label>Batch:</label>
+    <select name="batch" id="batchSelect" required>
+      <option value="">Select Batch</option>
+    </select>
 
-  <!-- Undergraduate Professional -->
-  <option>B.Tech – Computer Science & Engineering (CSE)</option>
-  <option>B.Tech – Electronics & Communication Engineering (ECE)</option>
-  <option>B.Tech – Electrical Engineering (EE)</option>
-  <option>B.Tech – Mechanical Engineering</option>
-  <option>B.Tech – Civil Engineering</option>
-  <option>B.Tech – Biotechnology</option>
-  <option>B.Tech – Aerospace Engineering</option>
-  <option>B.Tech – Petroleum Engineering & Earth Sciences</option>
+    <label>Course:</label>
+    <select name="course" required>
+      <option value="">Select Course</option>
+      <option>B.Tech CSE</option>
+      <option>B.Tech ECE</option>
+      <option>B.Tech EE</option>
+      <option>B.Tech Mechanical</option>
+      <option>B.Tech Civil</option>
+      <option>B.Tech Biotechnology</option>
+      <option>B.Tech Aerospace</option>
+      <option>B.Tech Petroleum</option>
+      <option>BBA</option>
+      <option>BCA</option>
+      <option>B.Com(H)</option>
+      <option>B.Sc</option>
+      <option>M.Tech CSE</option>
+      <option>M.Tech Structural</option>
+      <option>M.Tech CAD/CAM</option>
+      <option>M.Tech VLSI</option>
+      <option>MCA</option>
+      <option>MBA</option>
+      <option>M.Sc</option>
+      <option>M.Com</option>
+      <option>Ph.D</option>
+    </select>
 
-  <!-- Other UG Degrees -->
-  <option>BBA</option>
-  <option>BCA</option>
-  <option>B.Com (Hons.)</option>
-  <option>B.Sc (Honours) in Life Sciences / Allied Sciences / Microbiology</option>
-  <option>B.Sc Nursing</option>
-  <option>BA / BA (Hons) / MA</option>
-    <option>BA. JMC</option>
+    <label>Campus:</label>
+    <select name="campus" required>
+      <option value="">Select Campus</option>
+      <option>GEU, Dehradun</option>
+      <option>GEHU, Dehradun</option>
+      <option>GEHU, Bhimtal</option>
+      <option>GEHU, Haldwani</option>
+    </select>
 
-  <!-- Postgraduate -->
-  <option>M.Tech – Computer Science & Engineering (CSE)</option>
-  <option>M.Tech – Structural Engineering</option>
-  <option>M.Tech – CAD/CAM & Robotics</option>
-  <option>M.Tech – VLSI Design & Systems</option>
-  <option>M.Tech – Geoinformatics Engineering</option>
-  <option>MCA</option>
-  <option>MBA</option>
-  <option>MBA – Artificial Intelligence & Data Science</option>
-  <option>M.Sc – Chemistry / Environmental Science / Physics / Microbiology, etc.</option>
-  <option>M.Com</option>
+    <label>Message or Poem:</label>
+    <textarea name="message" rows="5" required></textarea>
 
-  <!-- Research / Doctoral -->
-  <option>Ph.D – Engineering / Management / Biosciences / Commerce / Humanities</option>
-  <option>Others</option>
-</select>
+    <button type="submit">Send</button>
+  </form>
 
-  
-
-      </select>
-
-      <label>Campus:</label>
-      <select name="campus" required>
-        <option value="">Select Campus</option>
-        <option>GEU/GEIT</option>
-        <option>GEHU, Dehradun</option>
-        <option>GEHU, Bhimtal</option>
-        <option>GEHU, Haldwani</option>
-      </select>
-
-      <label>Message or Poem:</label>
-      <textarea name="message" rows="5" required></textarea>
-
-      <button type="submit">Send</button>
-    </form>
-   <!-- Photo submission note -->
   <p class="photo-note">
-    If you have any photographs reflecting memories with your teachers, 
-    <a href="https://forms.gle/zNyBwSWEr7g54hbb9" target="_blank">click here to share them with us</a>.
+    If you have any photographs reflecting memories with your teachers,
+    <a href="https://forms.gle/your-google-form-link" target="_blank">click here to share them with us</a>.
   </p>
-</div></div>
+</div>
 
-  <script>
-    // Populate batch years
-    const batchSelect = document.querySelector('select[name="batch"]');
-    for (let year = 1998; year <= 2025; year++) {
-      const option = document.createElement('option');
-      option.value = year;
-      option.textContent = year;
-      batchSelect.appendChild(option);
-    }
+<script>
+  // Batch years
+  const batchSelect = document.getElementById('batchSelect');
+  for (let year = 1998; year <= 2025; year++) {
+    const option = document.createElement('option');
+    option.value = year;
+    option.textContent = year;
+    batchSelect.appendChild(option);
+  }
 
-    // Google Script form submission
-    const form = document.getElementById('contact-form');
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbw6kioS7LNMPXN0Lu18A03X4Ha8TI5BTEtwmlJSrOTQOltKUW7iQizAlXPNbHjxwDov8Q/exec';
-
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const submitButton = form.querySelector('button[type="submit"]');
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending...';
-
-      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(() => {
-          alert('Thank you! Your message has been sent successfully.');
-          form.reset();
-        })
-        .catch(error => {
-          console.error('Error!', error.message);
-          alert('Oops! There was a problem submitting your form.');
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-          submitButton.textContent = 'Send';
-        });
-    });
-
-    // Testimonials and Poems
-    const feedbacks = [
-      { name: "Ritika Sharma (MBA 2018)", msg: "To all my professors at GEHU — thank you for shaping my future!" },
-      { name: "Abhishek Mehra (B.Tech CSE 2016)", msg: "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words." },
-      { name: "Sneha Verma (BCA 2017)", msg: "No amount of words can express the impact my teachers had on me. Forever thankful!" },
-      { name: "Ravi Joshi (BBA 2015)", msg: "You made me believe in myself, and that's the greatest gift." },
-      { name: "Priya Rawat (M.Tech 2019)", msg: "Your wisdom continues to guide me. Happy Teachers' Day!" },
-      { name: "Aman Thakur (B.Com 2014)", msg: "Thank you for being the light in my path, always." },
-      { name: "Kajal Bansal (BSc 2016)", msg: "Every day in class was an inspiration. Much love to all my teachers!" },
-      { name: "Deepak Rawal (MBA 2020)", msg: "You nurtured not just my career, but my character too." }
-    ];
-
-    const poems = [
-      { title: "To the Guiding Light", lines: "In chalk and board, you built my dreams,\nMore powerful than a thousand reams.\nNot just a teacher, but a guide,\nIn every storm, you stood beside.", author: "Raghav Joshi (B.Tech 2017)" },
-      { title: "Silent Hero", lines: "You never asked for thanks or praise,\nYet changed my life in countless ways.\nYour words are etched within my core,\nYou made me someone I adore.", author: "Anjali Bansal (BCA 2016)" }
-     { 
-    name: "Himanshu Negi (B.Tech Biotech 2014)", 
-    msg: `हम नदी के तराने है, डरते थे, समुंदर में जाने से,
+  // Messages
+  const feedbacks = [
+    { name: "Ritika Sharma (MBA 2018)", msg: "To all my professors at GEHU — thank you for shaping my future!" },
+    { name: "Abhishek Mehra (B.Tech CSE 2016)", msg: "Each lesson taught by our teachers has been a stepping stone. Grateful beyond words." },
+    { name: "Sneha Verma (BCA 2017)", msg: "No amount of words can express the impact my teachers had on me. Forever thankful!" },
+    { name: "Ravi Joshi (BBA 2015)", msg: "You made me believe in myself, and that's the greatest gift." },
+    { name: "Priya Rawat (M.Tech 2019)", msg: "Your wisdom continues to guide me. Happy Teachers' Day!" },
+    { name: "Aman Thakur (B.Com 2014)", msg: "Thank you for being the light in my path, always." },
+    { name: "Kajal Bansal (BSc 2016)", msg: "Every day in class was an inspiration. Much love to all my teachers!" },
+    { name: "Deepak Rawal (MBA 2020)", msg: "You nurtured not just my career, but my character too." },
+    { 
+      name: "Himanshu Negi (B.Tech Biotech 2014)", 
+      msg: `हम नदी के तराने है, डरते थे, समुंदर में जाने से,
 शुक्रिया कह दूं, कैसे? जो कर्ज शुक्रिया ना हो सके।
 
 मैं कहां नही गया इस भारत में, मैंने अधिकतम भारत को नजदीक से देखा है। 
@@ -178,65 +290,92 @@
 
 आज मैं जो भी हूं, और भविष्य में जो भी सफलता अर्जित करूंगा,
 उसमें 80 प्रतिशत योगदान मेरी यूनिवर्सिटी का है।`
+    }
+  ];
+
+  // Poems
+  const poems = [
+    {
+      title: "A Tribute to My Teacher",
+      lines: `You lit the path when it was dark,\nYou left in me a hopeful spark,\nWith every word you gently said,\nYou shaped the thoughts inside my head.`,
+      author: "Tanya Kapoor (MBA 2019)"
+    },
+    {
+      title: "To the Guiding Light",
+      lines: `In chalk and board, you built my dreams,\nMore powerful than a thousand reams.\nNot just a teacher, but a guide,\nIn every storm, you stood beside.`,
+      author: "Raghav Joshi (B.Tech 2017)"
+    },
+    {
+      title: "Silent Hero",
+      lines: `You never asked for thanks or praise,\nYet changed my life in countless ways.\nYour words are etched within my core,\nYou made me someone I adore.`,
+      author: "Anjali Bansal (BCA 2016)"
+    },
+    {
+      title: "To My Guides in the Journey of Words",
+      lines: `First step in college, a little unsure,\nShipra Ma’am, your lessons opened the door.\nYour voice turned fear to eager delight,\nYou made the first semester truly bright.\n\nYachna Ma’am, with laughter and grace,\nTests I feared, but free time was ace.\nYour warmth made every moment new,\nA teacher, a friend, I thank you.\n\nDevika Ma’am, sweetest soul of the lot,\nIn every line, your kindness I caught.\nYou made literature feel like a song,\nGuiding us gently, carrying us along.\n\nAmar Sir, still a mentor today,\nYour wisdom shaped my professional way.\nFrom first mail correction to lessons profound,\nYour guidance is where my strength is found.\n\nAnshu Ma’am, your “YOU” gave us fear,\nBut your “HMM” brought the answers near.\nI cherished each class, challenge and all,\nWith you, I learned to never stall.\n\nArpita Ma’am, though you’ve moved away,\nYour kindness and maturity still stay.\nThank you for Hackathon and every smile,\nYou made the journey worthwhile.\n\nAnd Vipin Sir, our guiding star,\nAlways supportive, you raised the bar.\nFor standing with us through every tide,\nThank you for walking by our side.\n\nTo all my mentors, near or far,\nYou shaped who I am, you lit my star.`,
+      author: "2022 Batch"
+    }
+  ];
+
+  const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
+  let currentIndex = 0;
+
+  function renderTestimonials() {
+    const container = document.getElementById('messagesTab');
+    container.innerHTML = '';
+    for (let i = 0; i < 4 && i < feedbacks.length; i++) {
+      const index = (currentIndex + i) % feedbacks.length;
+      const feedback = feedbacks[index];
+      const div = document.createElement('div');
+      div.className = `sticky-note ${colors[i % colors.length]}`;
+      div.innerHTML = `${feedback.msg}<br><strong>– ${feedback.name}</strong>`;
+      container.appendChild(div);
+    }
+    currentIndex = (currentIndex + 4) % feedbacks.length;
   }
-];
-    const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
-    let currentIndex = 0;
 
-    function renderTestimonials() {
-      const container = document.getElementById('messagesTab');
-      container.innerHTML = '';
-      for (let i = 0; i < 4; i++) {
-        const index = (currentIndex + i) % feedbacks.length;
-        const feedback = feedbacks[index];
-        const div = document.createElement('div');
-        div.className = `sticky-note ${colors[i % colors.length]}`;
-        div.innerHTML = `${feedback.msg}<br><strong>– ${feedback.name}</strong>`;
-        container.appendChild(div);
-      }
-      currentIndex = (currentIndex + 4) % feedbacks.length;
-    }
-
-    function renderPoems() {
-      const container = document.getElementById('poemsTab');
-      container.innerHTML = '';
-      poems.forEach(poem => {
-        const div = document.createElement('div');
-        div.className = 'poem-card';
-        div.innerHTML = `<strong>${poem.title}</strong><p>${poem.lines.replace(/\n/g, '<br>')}</p><strong>– ${poem.author}</strong>`;
-        container.appendChild(div);
-      });
-    }
-
-    function showTab(tab) {
-      document.getElementById('messagesTab').style.display = (tab === 'messages') ? 'grid' : 'none';
-      document.getElementById('poemsTab').style.display = (tab === 'poems') ? 'grid' : 'none';
-      document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.classList.remove('active');
-        if (btn.textContent.toLowerCase() === tab) btn.classList.add('active');
-      });
-    }
-
-    function toggleForm() {
-      const form = document.getElementById('formSection');
-      form.classList.add('show');
-      form.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Header Scroll Transition
-    const header = document.getElementById('mainHeader');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+  function renderPoems() {
+    const container = document.getElementById('poemsTab');
+    container.innerHTML = '';
+    poems.forEach(poem => {
+      const div = document.createElement('div');
+      div.className = 'poem-card';
+      div.innerHTML = `<strong>${poem.title}</strong><p>${poem.lines.replace(/\n/g, '<br>')}</p><strong>– ${poem.author}</strong>`;
+      container.appendChild(div);
     });
+  }
 
-    renderTestimonials();
-    renderPoems();
-    setInterval(renderTestimonials, 8000);
-  </script>
+  function showTab(tab) {
+    document.getElementById('messagesTab').style.display = (tab === 'messages') ? 'grid' : 'none';
+    document.getElementById('poemsTab').style.display = (tab === 'poems') ? 'grid' : 'none';
+    document.querySelectorAll('.tab-button').forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.textContent.toLowerCase() === tab) btn.classList.add('active');
+    });
+  }
+
+  function toggleForm() {
+    const form = document.getElementById('formSection');
+    form.classList.add('show');
+    form.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Scroll transition for header
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('mainHeader');
+    if (window.scrollY > 50) {
+      header.classList.add('shrink');
+    } else {
+      header.classList.remove('shrink');
+    }
+  });
+
+  renderTestimonials();
+  renderPoems();
+  setInterval(renderTestimonials, 8000);
+</script>
+
 </body>
 </html>
+
 
