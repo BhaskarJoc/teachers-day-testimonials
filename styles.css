@@ -21,7 +21,11 @@ body {
   height: 100%;
   background: url('New folder/KK3A0918.JPG') no-repeat center center/cover;
   z-index: -1;
-  transition: background-image 1s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#slideshow.fade {
+  opacity: 0;
 }
 
 /* HEADER */
@@ -74,14 +78,14 @@ header .logo {
   padding: 10px 20px;
   margin: 0 5px;
   border: none;
-  background: rgba(255, 255, 255, 0.2);
+  background: red;
   color: white;
   cursor: pointer;
   border-radius: 5px;
 }
 
 .tab-button.active {
-  background: rgba(255, 255, 255, 0.5);
+  background: darkred;
 }
 
 .testimonial-grid,
@@ -90,6 +94,7 @@ header .logo {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
   padding: 10px;
+  margin-top: 15px;
 }
 
 .sticky-note {
@@ -97,8 +102,8 @@ header .logo {
   border-radius: 10px;
   font-size: 14px;
   text-align: left;
-  min-height: 100px;
-  color: #333;
+  min-height: 120px;
+  border: 2px solid red;
 }
 
 .sticky-yellow { background: #fffacd; }
@@ -107,11 +112,12 @@ header .logo {
 .sticky-pink { background: #ffb6c1; }
 
 .poem-card {
-  background: rgba(255, 255, 255, 0.9);
+  background: white;
   color: black;
   padding: 15px;
   border-radius: 10px;
   text-align: left;
+  border: 2px solid red;
 }
 
 /* FORM */
