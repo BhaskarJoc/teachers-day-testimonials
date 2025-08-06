@@ -23,8 +23,8 @@
   <section class="testimonials-section">
     <h2>Alumni Contributions</h2>
     <div class="tab-buttons">
-      <button class="tab-button active" data-tab="messages">Messages</button>
-      <button class="tab-button" data-tab="poems">Poems</button>
+      <button class="tab-button active" onclick="showTab('messages')">Messages</button>
+      <button class="tab-button" onclick="showTab('poems')">Poems</button>
     </div>
     <div class="testimonial-grid" id="messagesTab"></div>
     <div class="poem-grid" id="poemsTab" style="display:none;"></div>
@@ -33,14 +33,10 @@
   <!-- SUBMIT BUTTON -->
   <div class="submit-button-container">
     <button class="submit-button" onclick="toggleForm()">Submit Your Message or Poem</button>
-    <p class="photo-note">
-      If you have any photographs reflecting memories with your teachers,
-      <a href="https://forms.gle/your-google-form-link" target="_blank">click here to share them</a>.
-    </p>
   </div>
 
   <!-- FORM SECTION -->
-  <div class="form-section" id="formSection">
+  <div class="form-section hidden" id="formSection">
     <h2>Submit Your Message or Poem</h2>
     <form id="contact-form">
       <label>Name:</label>
@@ -78,6 +74,11 @@
 
       <button type="submit">Send</button>
     </form>
+
+    <p class="photo-note">
+      If you have any photograph reflecting a memory with your teachers,
+      <a href="https://forms.gle/your-google-form-link" target="_blank">click here to share</a>.
+    </p>
   </div>
 
   <script>
@@ -145,7 +146,6 @@
         const div = document.createElement('div');
         div.className = `sticky-note ${colors[i % colors.length]}`;
         div.innerHTML = `${feedback.msg}<br><strong>– ${feedback.name}</strong>`;
-        div.style.setProperty('--tilt', `${(Math.random() * 6 - 3)}deg`);
         container.appendChild(div);
       }
       currentIndex = (currentIndex + 4) % feedbacks.length;
@@ -162,22 +162,21 @@
       });
     }
 
-    // Tab functionality
-    document.querySelectorAll('.tab-button').forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const selectedTab = button.dataset.tab;
-        document.getElementById('messagesTab').style.display = selectedTab === 'messages' ? 'grid' : 'none';
-        document.getElementById('poemsTab').style.display = selectedTab === 'poems' ? 'grid' : 'none';
+    function showTab(tab) {
+      document.getElementById('messagesTab').style.display = (tab === 'messages') ? 'grid' : 'none';
+      document.getElementById('poemsTab').style.display = (tab === 'poems') ? 'grid' : 'none';
+      document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.textContent.toLowerCase() === tab) btn.classList.add('active');
       });
-    });
+    }
 
     function toggleForm() {
-      const form = document.getElementById('formSection');
-      form.classList.add('show');
-      form.scrollIntoView({ behavior: 'smooth' });
+      const formSection = document.getElementById('formSection');
+      formSection.classList.toggle('hidden');
+      if (!formSection.classList.contains('hidden')) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     // Header Scroll Transition
