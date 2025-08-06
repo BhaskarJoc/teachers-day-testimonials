@@ -8,9 +8,6 @@
 </head>
 <body>
 
-  <!-- BACKGROUND SLIDESHOW -->
-  <div id="slideshow"></div>
-
   <!-- HEADER -->
   <header id="mainHeader">
     <div class="header-left">
@@ -39,7 +36,7 @@
   </div>
 
   <!-- FORM SECTION -->
-  <div class="form-section" id="formSection" style="display:none;">
+  <div class="form-section hidden" id="formSection">
     <h2>Submit Your Message or Poem</h2>
     <form id="contact-form">
       <label>Name:</label>
@@ -79,8 +76,8 @@
     </form>
 
     <p class="photo-note">
-      If you have any photo reflecting a memory with your teachers, share it with us 
-      <a href="https://forms.gle/your-google-form-link" target="_blank">here</a>.
+      If you have any photograph reflecting a memory with your teachers,
+      <a href="https://forms.gle/your-google-form-link" target="_blank">click here to share</a>.
     </p>
   </div>
 
@@ -175,9 +172,11 @@
     }
 
     function toggleForm() {
-      const form = document.getElementById('formSection');
-      form.style.display = form.style.display === 'none' ? 'block' : 'none';
-      form.scrollIntoView({ behavior: 'smooth' });
+      const formSection = document.getElementById('formSection');
+      formSection.classList.toggle('hidden');
+      if (!formSection.classList.contains('hidden')) {
+        formSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
 
     // Header Scroll Transition
@@ -189,25 +188,6 @@
         header.classList.remove('scrolled');
       }
     });
-
-    // Background Slideshow (with fade effect)
-    const slideshow = document.getElementById('slideshow');
-    const backgroundImages = [
-      'New folder/KK3A0918.JPG',
-      'New folder/photo2.jpg',
-      'New folder/photo3.jpg'
-    ];
-    let currentImageIndex = 0;
-
-    function changeBackground() {
-      slideshow.classList.add('fade');
-      setTimeout(() => {
-        currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
-        slideshow.style.backgroundImage = `url('${backgroundImages[currentImageIndex]}')`;
-        slideshow.classList.remove('fade');
-      }, 500);
-    }
-    setInterval(changeBackground, 7000);
 
     renderTestimonials();
     renderPoems();
