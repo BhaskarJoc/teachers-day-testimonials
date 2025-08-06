@@ -1,222 +1,170 @@
-/* GENERAL STYLING */
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: url('New folder/KK3A0918.JPG') no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
-  line-height: 1.6;
-  padding-top: 120px;
+  color: white;
+  text-align: center;
+  overflow-x: hidden;
 }
 
-/* HEADER */
-header {
+/* BACKGROUND SLIDESHOW */
+#slideshow {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0);
-  color: white;
+  height: 100%;
+  background: url('New folder/KK3A0918.JPG') no-repeat center center/cover;
+  z-index: -1;
+  transition: background-image 1s ease-in-out;
+}
+
+/* HEADER */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 30px;
-  z-index: 1000;
-  transition: background 0.4s ease, padding 0.4s ease, color 0.4s ease;
+  padding: 15px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 0, 0, 0.4);
+  transition: background 0.3s ease;
+  z-index: 10;
 }
 
 header.scrolled {
-  background: rgba(0, 0, 0, 0.85);
-  padding: 12px 25px;
+  background: rgba(255, 0, 0, 0.9);
+}
+
+header .header-left {
+  text-align: left;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 28px;
-  transition: font-size 0.4s ease;
-}
-
-header.scrolled h1 {
-  font-size: 20px;
+  font-size: 24px;
+  margin-bottom: 5px;
 }
 
 header p {
-  margin: 0;
   font-size: 14px;
 }
 
-.logo {
-  height: 60px;
-  width: auto;
-  transition: height 0.4s ease;
+header .logo {
+  width: 70px;
+  height: auto;
 }
 
-header.scrolled .logo {
-  height: 45px;
-}
-
-/* TESTIMONIAL SECTION */
+/* SECTIONS */
 .testimonials-section {
-  text-align: center;
-  padding: 30px 20px;
-  background: rgba(255, 255, 255, 0.85);
-  margin: 20px;
-  border-radius: 10px;
+  margin-top: 120px;
+  padding: 20px;
 }
 
-.testimonials-section h2 {
-  margin-bottom: 15px;
-  font-size: 26px;
-  color: #444;
-}
-
-/* TAB BUTTONS */
 .tab-buttons {
   margin-bottom: 15px;
 }
 
 .tab-button {
-  background: #ddd;
-  border: none;
   padding: 10px 20px;
-  cursor: pointer;
   margin: 0 5px;
-  font-size: 16px;
-  border-radius: 4px;
-  transition: background 0.3s;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 .tab-button.active {
-  background: red;
-  color: white;
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.tab-button:hover {
-  background: #bbb;
-}
-
-/* STICKY NOTES */
-.testimonial-grid {
+.testimonial-grid,
+.poem-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 15px;
-  margin-top: 15px;
+  padding: 10px;
 }
 
 .sticky-note {
   padding: 15px;
+  border-radius: 10px;
   font-size: 14px;
-  border-radius: 8px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  min-height: 100px;
+  color: #333;
 }
 
-.sticky-yellow { background: #fff475; }
-.sticky-blue { background: #a7c7ff; }
-.sticky-green { background: #b8f7b8; }
-.sticky-pink { background: #ffc0cb; }
-
-/* POEMS */
-.poem-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-}
+.sticky-yellow { background: #fffacd; }
+.sticky-blue { background: #add8e6; }
+.sticky-green { background: #90ee90; }
+.sticky-pink { background: #ffb6c1; }
 
 .poem-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
   padding: 15px;
+  border-radius: 10px;
   text-align: left;
 }
 
 /* FORM */
+.submit-button-container {
+  margin: 20px;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .form-section {
   background: rgba(255, 255, 255, 0.95);
-  margin: 30px auto;
+  color: black;
   padding: 20px;
-  max-width: 500px;
+  margin: 20px auto;
+  max-width: 600px;
   border-radius: 10px;
-  opacity: 1;
-  transform: scaleY(1);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.form-section.hidden {
-  opacity: 0;
-  transform: scaleY(0);
-  height: 0;
-  overflow: hidden;
-}
-
-.form-section h2 {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.form-section label {
-  display: block;
-  margin: 10px 0 5px;
-  font-weight: bold;
+  text-align: left;
 }
 
 .form-section input,
 .form-section select,
 .form-section textarea {
   width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
+  padding: 10px;
+  margin: 8px 0;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 5px;
 }
 
 .form-section button {
+  padding: 10px;
   background: red;
   color: white;
   border: none;
-  padding: 10px 15px;
-  width: 100%;
-  font-size: 16px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.form-section button:hover {
-  background: darkred;
-}
-
-/* SUBMIT BUTTON + PHOTO NOTE */
-.submit-button-container {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.submit-button {
-  background: red;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  background: darkred;
 }
 
 .photo-note {
-  margin-top: 10px;
   font-size: 14px;
+  margin-top: 10px;
+  color: black;
   text-align: center;
 }
 
 .photo-note a {
-  color: blue;
+  color: red;
   text-decoration: underline;
 }
