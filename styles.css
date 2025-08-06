@@ -10,7 +10,6 @@ body {
   color: white;
   text-align: center;
   overflow-x: hidden;
-  background-color: #0d1b2a;
 }
 
 /* BACKGROUND SLIDESHOW */
@@ -38,13 +37,13 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(13, 27, 42, 0.5); /* Transparent Dark Blue */
+  background: rgba(255, 0, 0, 0.4);
   transition: background 0.3s ease;
   z-index: 10;
 }
 
 header.scrolled {
-  background: rgba(13, 27, 42, 0.95); /* Solid Dark Blue on scroll */
+  background: rgba(255, 0, 0, 0.9);
 }
 
 header .header-left {
@@ -54,12 +53,10 @@ header .header-left {
 header h1 {
   font-size: 24px;
   margin-bottom: 5px;
-  color: #f4d35e; /* Yellow */
 }
 
 header p {
   font-size: 14px;
-  color: #f4d35e;
 }
 
 header .logo {
@@ -81,15 +78,14 @@ header .logo {
   padding: 10px 20px;
   margin: 0 5px;
   border: none;
-  background: #f4d35e; /* Yellow */
-  color: #0d1b2a; /* Dark Blue text */
+  background: red;
+  color: white;
   cursor: pointer;
   border-radius: 5px;
-  font-weight: bold;
 }
 
 .tab-button.active {
-  background: #e4c23d; /* Slightly darker yellow for active */
+  background: darkred;
 }
 
 .testimonial-grid,
@@ -107,23 +103,21 @@ header .logo {
   font-size: 14px;
   text-align: left;
   min-height: 120px;
-  border: 2px solid #f4d35e;
-  background: rgba(13, 27, 42, 0.9);
-  color: #f4d35e;
+  border: 2px solid red;
 }
 
-.sticky-yellow { background: rgba(244, 211, 94, 0.15); }
-.sticky-blue { background: rgba(13, 27, 42, 0.8); }
-.sticky-green { background: rgba(244, 211, 94, 0.25); }
-.sticky-pink { background: rgba(244, 211, 94, 0.35); }
+.sticky-yellow { background: #fffacd; }
+.sticky-blue { background: #add8e6; }
+.sticky-green { background: #90ee90; }
+.sticky-pink { background: #ffb6c1; }
 
 .poem-card {
-  background: rgba(13, 27, 42, 0.9);
-  color: #f4d35e;
+  background: white;
+  color: black;
   padding: 15px;
   border-radius: 10px;
   text-align: left;
-  border: 2px solid #f4d35e;
+  border: 2px solid red;
 }
 
 /* FORM */
@@ -133,23 +127,21 @@ header .logo {
 
 .submit-button {
   padding: 10px 20px;
-  background: #f4d35e;
-  color: #0d1b2a;
+  background: red;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .form-section {
-  background: rgba(13, 27, 42, 0.95);
-  color: #f4d35e;
+  background: rgba(255, 255, 255, 0.95);
+  color: black;
   padding: 20px;
   margin: 20px auto;
   max-width: 600px;
   border-radius: 10px;
   text-align: left;
-  border: 2px solid #f4d35e;
 }
 
 .form-section input,
@@ -158,31 +150,27 @@ header .logo {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
-  border: 1px solid #f4d35e;
+  border: 1px solid #ccc;
   border-radius: 5px;
-  background: #0d1b2a;
-  color: #f4d35e;
 }
 
 .form-section button {
   padding: 10px;
-  background: #f4d35e;
-  color: #0d1b2a;
+  background: red;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
 }
 
 .photo-note {
   font-size: 14px;
   margin-top: 10px;
-  color: #f4d35e;
+  color: black;
   text-align: center;
 }
 
 .photo-note a {
-  color: #f4d35e;
+  color: red;
   text-decoration: underline;
 }
-
