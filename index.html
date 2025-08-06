@@ -5,7 +5,6 @@
   <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -84,14 +83,28 @@
       padding: 20px;
     }
 
+    /* Sticky Notes Styling */
     .sticky-note {
       padding: 15px;
       border-radius: 10px;
-      background: rgba(255, 255, 255, 0.85);
-      color: black;
       font-family: 'Noto Sans Devanagari', sans-serif;
       white-space: pre-line;
+      color: #333;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transform: rotate(-1deg);
+      transition: transform 0.2s ease;
     }
+
+    .sticky-note:hover {
+      transform: scale(1.05);
+    }
+
+    .sticky-yellow { background: #fff8a6; }
+    .sticky-blue { background: #a6e7ff; }
+    .sticky-green { background: #c8f7c5; }
+    .sticky-pink { background: #ffccf9; }
+    .sticky-orange { background: #ffd9b3; }
+    .sticky-purple { background: #e0b3ff; }
 
     .poem-card {
       background: rgba(255, 255, 255, 0.9);
@@ -317,7 +330,7 @@
     }
   ];
 
-  const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
+  const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink', 'sticky-orange', 'sticky-purple'];
   let currentIndex = 0;
 
   function renderTestimonials() {
@@ -329,6 +342,7 @@
       const div = document.createElement('div');
       div.className = `sticky-note ${colors[i % colors.length]}`;
       div.innerHTML = `${feedback.msg}<br><strong>– ${feedback.name}</strong>`;
+      div.style.transform = `rotate(${Math.random() * 4 - 2}deg)`; // Random tilt effect
       container.appendChild(div);
     }
     currentIndex = (currentIndex + 4) % feedbacks.length;
@@ -377,5 +391,3 @@
 
 </body>
 </html>
-
-
