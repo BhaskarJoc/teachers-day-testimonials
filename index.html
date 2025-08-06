@@ -5,187 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Teachers' Day 2025 | Graphic Era Alumni Association</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-    }
-
-    header {
-      background: #b30000;
-      color: white;
-      padding: 20px;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: all 0.4s ease-in-out;
-      z-index: 1000;
-    }
-
-    header.scrolled {
-      padding: 10px 20px;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-
-    header.scrolled h1 {
-      font-size: 18px;
-    }
-
-    header p {
-      margin: 0;
-    }
-
-    .logo {
-      height: 50px;
-      transition: height 0.4s ease-in-out;
-    }
-
-    header.scrolled .logo {
-      height: 35px;
-    }
-
-    .testimonials-section {
-      margin-top: 120px;
-      text-align: center;
-    }
-
-    .tab-buttons {
-      margin: 20px 0;
-    }
-
-    .tab-button {
-      padding: 10px 20px;
-      margin: 0 5px;
-      border: none;
-      background: #800000;
-      color: white;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    .tab-button.active {
-      background: #ff4d4d;
-    }
-
-    .testimonial-grid,
-    .poem-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
-
-    /* Sticky Notes Styling */
-    .sticky-note {
-      padding: 15px;
-      border-radius: 10px;
-      font-family: 'Noto Sans Devanagari', sans-serif;
-      white-space: pre-line;
-      color: #333;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease;
-    }
-
-    .sticky-note:hover {
-      transform: scale(1.05);
-    }
-
-    .sticky-yellow { background: #fff8a6; }
-    .sticky-blue { background: #a6e7ff; }
-    .sticky-green { background: #c8f7c5; }
-    .sticky-pink { background: #ffccf9; }
-    .sticky-orange { background: #ffd9b3; }
-    .sticky-purple { background: #e0b3ff; }
-
-    .poem-card {
-      background: rgba(255, 255, 255, 0.9);
-      padding: 15px;
-      border-radius: 10px;
-      color: black;
-      text-align: left;
-    }
-
-    .submit-button-container {
-      text-align: center;
-      margin: 20px;
-    }
-
-    .submit-button {
-      padding: 10px 20px;
-      background: #b30000;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .form-section {
-      display: none;
-      background: rgba(255, 255, 255, 0.95);
-      margin: 20px auto;
-      max-width: 500px;
-      padding: 20px;
-      border-radius: 10px;
-      color: black;
-    }
-
-    .form-section.show {
-      display: block;
-    }
-
-    .form-section label {
-      display: block;
-      margin-top: 10px;
-      text-align: left;
-    }
-
-    .form-section input,
-    .form-section select,
-    .form-section textarea {
-      width: 100%;
-      margin-top: 5px;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .form-section button {
-      margin-top: 15px;
-      width: 100%;
-      padding: 10px;
-      background: #b30000;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .photo-note {
-      margin-top: 10px;
-      font-size: 14px;
-      text-align: center;
-      color: #555;
-    }
-
-    .photo-note a {
-      color: #800000;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .photo-note a:hover {
-      text-decoration: underline;
-    }
-  </style>
 </head>
 <body>
 
@@ -204,8 +23,8 @@
   <section class="testimonials-section">
     <h2>Alumni Contributions</h2>
     <div class="tab-buttons">
-      <button class="tab-button active" onclick="showTab('messages')">Messages</button>
-      <button class="tab-button" onclick="showTab('poems')">Poems</button>
+      <button class="tab-button active" data-tab="messages">Messages</button>
+      <button class="tab-button" data-tab="poems">Poems</button>
     </div>
     <div class="testimonial-grid" id="messagesTab"></div>
     <div class="poem-grid" id="poemsTab" style="display:none;"></div>
@@ -311,11 +130,10 @@
     const poems = [
       { title: "A Tribute to My Teacher", lines: "You lit the path when it was dark,\nYou left in me a hopeful spark,\nWith every word you gently said,\nYou shaped the thoughts inside my head.", author: "Tanya Kapoor (MBA 2019)" },
       { title: "To the Guiding Light", lines: "In chalk and board, you built my dreams,\nMore powerful than a thousand reams.\nNot just a teacher, but a guide,\nIn every storm, you stood beside.", author: "Raghav Joshi (B.Tech 2017)" },
-      { title: "Silent Hero", lines: "You never asked for thanks or praise,\nYet changed my life in countless ways.\nYour words are etched within my core,\nYou made me someone I adore.", author: "Anjali Bansal (BCA 2016)" },
-      { title: "To My Guides in the Journey of Words", lines: "First step in college, a little unsure,\nShipra Ma’am, your lessons opened the door...\n(Full poem text here)", author: "2022 Batch" }
+      { title: "Silent Hero", lines: "You never asked for thanks or praise,\nYet changed my life in countless ways.\nYour words are etched within my core,\nYou made me someone I adore.", author: "Anjali Bansal (BCA 2016)" }
     ];
 
-    const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink', 'sticky-orange', 'sticky-purple'];
+    const colors = ['sticky-yellow', 'sticky-blue', 'sticky-green', 'sticky-pink'];
     let currentIndex = 0;
 
     function renderTestimonials() {
@@ -327,7 +145,7 @@
         const div = document.createElement('div');
         div.className = `sticky-note ${colors[i % colors.length]}`;
         div.innerHTML = `${feedback.msg}<br><strong>– ${feedback.name}</strong>`;
-        div.style.transform = `rotate(${Math.random() * 4 - 2}deg)`; // Random tilt effect
+        div.style.setProperty('--tilt', `${(Math.random() * 6 - 3)}deg`);
         container.appendChild(div);
       }
       currentIndex = (currentIndex + 4) % feedbacks.length;
@@ -344,6 +162,37 @@
       });
     }
 
-    function showTab(tab) {
-      document.getElementById('messagesTab').style.display = (tab === 'messages') ? 'grid' : 'none';
-      docum
+    // Tab functionality
+    document.querySelectorAll('.tab-button').forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const selectedTab = button.dataset.tab;
+        document.getElementById('messagesTab').style.display = selectedTab === 'messages' ? 'grid' : 'none';
+        document.getElementById('poemsTab').style.display = selectedTab === 'poems' ? 'grid' : 'none';
+      });
+    });
+
+    function toggleForm() {
+      const form = document.getElementById('formSection');
+      form.classList.add('show');
+      form.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Header Scroll Transition
+    const header = document.getElementById('mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    renderTestimonials();
+    renderPoems();
+    setInterval(renderTestimonials, 8000);
+  </script>
+</body>
+</html>
